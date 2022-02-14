@@ -2,27 +2,22 @@ import './App.css';
 import {useState} from "react";
 import PlayerList from './components/PlayerList'
 import {playerData} from './data/playerData'
-import Time from './components/welcome/Time'
+import Welcome from './components/welcome/Time'
 import FavoriteList from './components/FavoriteList';
 
 function App() {
     const[favorites, setFavorites] = useState([])
-    const whoGotClicked = (name) => {
-      setFavorites([...favorites, name])
+
+    const addFavorite = (id) => {
+      setFavorites([...favorites, id])
     }
 
   return (
     <div className="App">
       <h1>Welcome to Spring Training </h1>
-      <Time />
-      {/* <PlayerList firstName={playerData[0].firstName} lastName={playerData[0].lastName} hobbies={playerData[0].hobbies} jerseyNumber={playerData[0].jerseyNumber}/>
-      <PlayerList firstName={playerData[1].firstName} lastName={playerData[1].lastName} hobbies={playerData[1].hobbies} jerseyNumber={playerData[1].jerseyNumber}/>
-      <PlayerList firstName={playerData[2].firstName} lastName={playerData[2].lastName} hobbies={playerData[2].hobbies} jerseyNumber={playerData[2].jerseyNumber}/> */}
-
-      <PlayerList data={playerData}/>
-
-      <FavoriteList/>
-      {/* add data !!  */}
+      <Welcome />
+      <PlayerList data={playerData} addFav={addFavorite}/>
+      <FavoriteList favs={favorites}/>
     </div>
   );
 }
