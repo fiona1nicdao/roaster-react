@@ -1,5 +1,5 @@
 // import { playerData } from "../App";
-import Hobbies from './Hobbies'
+// import Hobbies from './Hobbies'
 
 export default function RenderPlayers(props){
     // const {id, firstName, lastName, hobbies, jerseyNumber} = athlete
@@ -18,7 +18,7 @@ export default function RenderPlayers(props){
                 {playerHobbies}
                 <br></br>
                 {/* need to fix button -type rule props.addFav is not a function */}
-                <button onClick={props.addFav}>Add to Favorites</button>
+                <button onClick={()=>props.addFavorites(props.firstName)}>Add to Favorites</button>
             </div>
         )
 }

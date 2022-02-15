@@ -12,7 +12,7 @@ export default function PlayerList(props){
                 lastName={data.lastName}
                 jersey={data.jerseyNumber}
                 hobbies={data.hobbies}
-                addFav={props.addFavorites}/>    
+                addFavorites={props.addFavorites}/>    
         )
     })
     return <div className="player-container">{allPlayers}</div>

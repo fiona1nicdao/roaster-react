@@ -6,18 +6,20 @@ import Welcome from './components/welcome/Time'
 import FavoriteList from './components/FavoriteList';
 
 function App() {
-    const[favorites, setFavorites] = useState([])
+    const[favorites, setFavorites] = useState(["Sam","Lisa"])
 
-    const addFavorite = (id) => {
-      setFavorites([...favorites, id])
+    const addFavorites = (name) => {
+      // !favorites.includes(id) ? setFavorites([...favorites, id]) :null 
+      setFavorites([...favorites, name])
     }
+    // const resest = () => setFavorites([]);
 
   return (
     <div className="App">
       <h1>Welcome to Spring Training </h1>
       <Welcome />
-      <PlayerList data={playerData} addFav={addFavorite}/>
-      <FavoriteList favs={favorites}/>
+      <PlayerList data={playerData} addFavorites={addFavorites}/>
+      <FavoriteList favorites={favorites}/>
     </div>
   );
 }
